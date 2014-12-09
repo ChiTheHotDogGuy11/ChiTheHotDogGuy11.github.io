@@ -59,6 +59,8 @@
       body {
         font-family: 'Pontano Sans', sans-serif;
         font-size: 1.2em;
+        /*height: 720px;
+        overflow: hidden;*/
       }
       
       #header-wrapper {
@@ -106,10 +108,10 @@
     <iframe id="0" src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AiSO7r0UECiEdHNFbGRsSFFvYk9qdGtuTXFjektiQ1E&font=Bevan-PotanoSans&maptype=toner&lang=en&height=650' width='100%' height='650' frameborder='0'></iframe>
     
     <!-- Regress: https://docs.google.com/spreadsheet/pub?key=0AiSO7r0UECiEdFdvTGo4TFM4VzhGM3RPendXS1o0Z1E&output=html -->
-    <iframe id="1" src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AiSO7r0UECiEdFdvTGo4TFM4VzhGM3RPendXS1o0Z1E&font=Bevan-PotanoSans&maptype=toner&lang=en&height=650' width='100%' height='650' frameborder='0' style="display:none;"></iframe>
+    <iframe id="1" style="display:none;" src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AiSO7r0UECiEdFdvTGo4TFM4VzhGM3RPendXS1o0Z1E&font=Bevan-PotanoSans&maptype=toner&lang=en&height=650' width='100%' height='650' frameborder='0' style="display:none;"></iframe>
     
     <!-- Mind/Body: https://docs.google.com/spreadsheet/pub?key=0AiSO7r0UECiEdHdzMmVwWDkzOHJYaTJERnVFOVE4ZHc&output=html -->
-    <iframe id="2" src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AiSO7r0UECiEdHdzMmVwWDkzOHJYaTJERnVFOVE4ZHc&font=Bevan-PotanoSans&maptype=toner&lang=en&height=650' width='100%' height='650' frameborder='0'></iframe>
+    <iframe id="2" style="display:none;" src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AiSO7r0UECiEdHdzMmVwWDkzOHJYaTJERnVFOVE4ZHc&font=Bevan-PotanoSans&maptype=toner&lang=en&height=650' width='100%' height='650' frameborder='0'></iframe>
     
     <script>
       $(document).ready(function() {
@@ -118,6 +120,9 @@
           width += $(this).outerWidth();
         });
         $("ul").width(width+100);
+        
+        //$("iframe").css("display", "none");
+        //$("#0").css("display", "block");
       });
     
       $("#header-wrapper li").click(function() {
