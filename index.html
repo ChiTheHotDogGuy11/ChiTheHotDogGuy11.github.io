@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>Philosophy Timeline</title>
+    
+    <!-- jQuery -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    
+    <link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
+    
+    <style>
+      html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed, 
+      figure, figcaption, footer, header, hgroup, 
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      /* HTML5 display-role reset for older browsers */
+      article, aside, details, figcaption, figure, 
+      footer, header, hgroup, menu, nav, section {
+        display: block;
+      }
+      body {
+        line-height: 1;
+      }
+      ol, ul {
+        list-style: none;
+      }
+      blockquote, q {
+        quotes: none;
+      }
+      blockquote:before, blockquote:after,
+      q:before, q:after {
+        content: '';
+        content: none;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+    </style>
+    
+    <style>
+      body {
+        font-family: 'Pontano Sans', sans-serif;
+        font-size: 1.2em;
+      }
+      
+      #header-wrapper {
+        height: 70px;
+        background: black;
+        color: white;
+        margin: 0px auto;
+      }
+      
+      ul {
+        margin: 0px auto;
+        
+      }
+      
+      ul li:hover {
+        cursor: pointer;
+        color: #e9e9e9;
+      }
+      
+      ul li {
+        margin-right: 50px;
+        line-height: 70px;
+        float: left;
+      }
+      
+      ul li.last {
+        margin-right: 0px;
+      }
+      
+      ul li.active {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-wrapper">
+      <ul>
+        <li class="active" index="0">Biography</li>
+        <li index="1">Regress Problem</li>
+        <li class="last" index="2">Mind/Body Problem</li>
+      </ul>
+    </div>
+    
+    <!-- Biography: https://docs.google.com/spreadsheet/pub?key=0AiSO7r0UECiEdHNFbGRsSFFvYk9qdGtuTXFjektiQ1E&output=html -->
+    <iframe id="0" src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AiSO7r0UECiEdHNFbGRsSFFvYk9qdGtuTXFjektiQ1E&font=Bevan-PotanoSans&maptype=toner&lang=en&height=650' width='100%' height='650' frameborder='0'></iframe>
+    
+    <!-- Regress: https://docs.google.com/spreadsheet/pub?key=0AiSO7r0UECiEdFdvTGo4TFM4VzhGM3RPendXS1o0Z1E&output=html -->
+    <iframe id="1" src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AiSO7r0UECiEdFdvTGo4TFM4VzhGM3RPendXS1o0Z1E&font=Bevan-PotanoSans&maptype=toner&lang=en&height=650' width='100%' height='650' frameborder='0' style="display:none;"></iframe>
+    
+    <!-- Mind/Body: https://docs.google.com/spreadsheet/pub?key=0AiSO7r0UECiEdHdzMmVwWDkzOHJYaTJERnVFOVE4ZHc&output=html -->
+    <iframe id="2" src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AiSO7r0UECiEdHdzMmVwWDkzOHJYaTJERnVFOVE4ZHc&font=Bevan-PotanoSans&maptype=toner&lang=en&height=650' width='100%' height='650' frameborder='0'></iframe>
+    
+    <script>
+      $(document).ready(function() {
+        var width = 0;
+        $("li").each(function() {
+          width += $(this).outerWidth();
+        });
+        $("ul").width(width+100);
+      });
+    
+      $("#header-wrapper li").click(function() {
+        $("iframe").css("display", "none");
+        var name = "#" + $(this).attr("index");
+        $(name).css("display", "block");
+        
+        $("#header-wrapper li").removeClass("active");
+        $(this).addClass("active");
+      });
+    </script>
+  </body>
+</html>
